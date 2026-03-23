@@ -6,7 +6,7 @@ const senha = document.getElementById("senha");
 
 const emailError = document.getElementById("emailError");
 const senhaError = document.getElementById("senhaError");
-const formError = document.getElementById("formError");
+const formError = document.getElementById("form-error");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // 🚫 impede recarregar página
