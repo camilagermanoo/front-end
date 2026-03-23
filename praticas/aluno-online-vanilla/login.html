@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body class="login-page">
+  <main class="login-container">
+    <img src="/learn.svg" alt="Icon Hat">
+    <h1>Aluno Online</h1>
+
+    <form id="loginForm">
+      
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Digite seu email">
+        <span class="error" id="emailError"></span>
+      </div>
+
+      <div class="input-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Digite sua senha">
+        <span class="error" id="senhaError"></span>
+      </div>
+
+      <button type="submit">Entrar</button>
+
+      <p id="formError" class="error"></p>
+    </form>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
