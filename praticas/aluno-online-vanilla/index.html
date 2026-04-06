@@ -1,53 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aluno Online</title>
-  </head>
-  <body> 
-    <aside>
-      <header>
-        <h2>Aluno Online</h2>
-        <img src="/learn.svg" alt="Icon Hat">
-      </header>
-      <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Notas</a></li>
-        <li><a href="#">Faltas</a></li>
-        <li><a href="#">Boletos</a></li>
-        <li><a href="#">Requerimentos</a></li>
-        <li><a href="#">Sair</a></li>
-        </ul>
-    </aside>
-    <main>
-      <header>
-        <h1>Olá, Aluno!</h1>
-        <img src="/avatar.svg" alt="Icon User">
-      </header>  
-      <section> 
-        <h2>Bem-vindo ao portal do aluno</h2>
-        <article> 
-          <h3>Mural de Avisos</h3>
-          <p>Inscrição para o projeto de extensão</p>
-          <p>Eleição para representante da turma</p>
-        </article>
-        <article> 
-          <h3>Calendário Acadêmico</h3>
-          <p>23/03 - Início do período letivo 2026-1</p>
-          <p>25/04 - Prazo final para aplicação da P1</p>
-          <p>23/06 - Prazo final para aplicação da P2</p>
-          <p>23/07 - Fim do período letivo 2026-1</p>
-        </article>
-        <article> 
-          <h3>Minhas Disciplinas</h3>
-          <p>BI e Data Warehousing</p>
-          <p>Construção de Frontend</p>
-          <p>Governança de TI</p>
-        </article>
-      </section>
-    </main>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body class="login-page">
+  <main class="login-container">
+    <img src="/learn.svg" alt="Icon Hat">
+    <h1>Aluno Online</h1>
+
+    <form id="loginForm">
+      <fieldset class="input-group">
+        <legend>Login</legend>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Digite seu email">
+        <span class="error" id="emailError"></span>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Digite sua senha">
+        <span class="error" id="senhaError"></span>
+
+        <button type="submit">Entrar</button>
+
+        <p id="form-error" class="error"></p>
+      </fieldset>
+    </form>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>
