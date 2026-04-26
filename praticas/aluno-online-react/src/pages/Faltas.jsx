@@ -1,17 +1,19 @@
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+import PageLayout from "../components/PageLayout";
+import Card from "../components/Card";
 
 function Faltas() {
-    return (
-        <div>
-            <Sidebar />
-            <main>
-                <Topbar />
-                <h2>Minhas Faltas</h2>
-                <section></section>
-            </main>
-        </div>
-    );
+  return (
+    <PageLayout titulo="Minhas Faltas">
+      <Card
+        titulo="Faltas por Disciplina"
+        itens={[
+          "BI e Data Warehousing: 2 faltas",
+          "Construção de Frontend: 1 falta",
+          "Desenvolvimento de Backend: 0 faltas"
+        ]}
+      />
+    </PageLayout>
+  );
 }
 
 export default Faltas;

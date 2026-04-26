@@ -1,17 +1,17 @@
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+import PageLayout from "../components/PageLayout";
+import Card from "../components/Card";
 
-function Boletos() {
-    return (
-        <div>
-            <Sidebar />
-            <main>
-                <Topbar />
-                <h2>Meus Boletos</h2>
-                <section></section>
-            </main>
-        </div>
-    );
+export default function Boletos() {
+  return (
+    <PageLayout titulo="Boletos">
+      <Card
+        titulo="Situação dos Boletos"
+        itens={[
+          "Janeiro - Pago",
+          "Fevereiro - Pago",
+          "Março - Pendente"
+        ]}
+      />
+    </PageLayout>
+  );
 }
-
-export default Boletos;
