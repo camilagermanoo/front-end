@@ -10,5 +10,3 @@ export default function Card({ titulo, itens }) {
     </article>
   );
 }
-
-export default Card;
