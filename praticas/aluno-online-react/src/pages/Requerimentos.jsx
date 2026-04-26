@@ -1,17 +1,19 @@
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+import PageLayout from "../components/PageLayout";
+import Card from "../components/Card";
 
 function Requerimentos() {
-    return (
-        <div>
-            <Sidebar />
-            <main>
-                <Topbar />
-                <h2>Meus Requerimentos</h2>
-                <section></section>
-            </main>
-        </div>
-    );
+  return (
+    <PageLayout titulo="Meus Requerimentos">
+      <Card
+        titulo="Status dos Requerimentos"
+        itens={[
+          "Declaração de matrícula - Em análise",
+          "2ª via de boleto - Aprovado",
+          "Histórico escolar - Concluído"
+        ]}
+      />
+    </PageLayout>
+  );
 }
 
 export default Requerimentos;
