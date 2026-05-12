@@ -1,8 +1,9 @@
+import { useParams } from 'react-router';
+
 function Perfil() {
     return (
         <>
-            <h1>Perfil do usuário</h1>
-            <Menu/>
+        <h1>Perfil do Usuário</h1>
         </>
     )
 }
