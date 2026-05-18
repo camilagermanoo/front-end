@@ -1,12 +1,12 @@
-import user from '../assets/avatar.svg';
+import { useAuth } from "../contexts/AuthContext";
 
-function Topbar() {
-    return (
-        <header>
-        <h1 >Olá, Aluno!</h1>
-        <img src={user} alt="imagem avatar" />
-      </header>
-    );
+export default function Topbar() {
+  const { usuario } = useAuth();
+
+  return (
+    <header>
+      <span>Aluno Online</span>
+      {usuario && <span>Olá, {usuario.nome}</span>}
+    </header>
+  );
 }
-
-export default Topbar;

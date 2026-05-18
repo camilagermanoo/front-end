@@ -1,16 +1,13 @@
-function Menu() {
-    return (
-    <nav>
-        <ul>
-          <li>Dashboard</li>
-          <li>Notas</li>
-          <li>Faltas</li>
-          <li>Boletos</li>
-          <li>Requerimentos</li>
-          <li>Sair</li>
-        </ul>
-    </nav>
-      );
-}
+import { useAuth } from "../contexts/AuthContext";
 
-export default Menu;
+export default function Menu() {
+  const { logout } = useAuth();
+
+  return (
+    <nav>
+      <a href="/">Dashboard</a>
+      <a href="/faltas">Faltas</a>
+      <button onClick={logout}>Sair</button>
+    </nav>
+  );
+}

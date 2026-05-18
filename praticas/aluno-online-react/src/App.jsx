@@ -5,8 +5,24 @@ import Faltas from './pages/Faltas';
 import Notas from './pages/Notas';
 import Requerimentos from './pages/Requerimentos';
 
-function App() {
-  return <Dashboard />
-}
+export default function App() {
+  const { autenticado } = useAuth();
 
-export default App;
+  if (!autenticado) {
+    return (
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    );
+  }
+
+  return (
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/faltas" element={<Faltas />} />
+      {/* adicione as demais rotas aqui */}
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
+}
