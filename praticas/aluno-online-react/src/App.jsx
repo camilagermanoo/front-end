@@ -1,28 +1,34 @@
 import "./App.css";
-import Dashboard from './pages/Dashboard';
-import Boletos from './pages/Boletos';
-import Faltas from './pages/Faltas';
-import Notas from './pages/Notas';
-import Requerimentos from './pages/Requerimentos';
 
-export default function App() {
-  const { autenticado } = useAuth();
+import { Routes, Route } from "react-router-dom";
 
-  if (!autenticado) {
-    return (
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="*" element={<Navigate to="/login" replace />} />
-      </Routes>
-    );
-  }
+import Layout from "./layouts/Layout";
 
+import Dashboard from "./pages/Dashboard";
+import Boletos from "./pages/Boletos";
+import Faltas from "./pages/Faltas";
+import Notas from "./pages/Notas";
+import Requerimentos from "./pages/Requerimentos";
+
+function App() {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/faltas" element={<Faltas />} />
-      {/* adicione as demais rotas aqui */}
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Dashboard />} />
+
+        <Route path="notas" element={<Notas />} />
+
+        <Route path="faltas" element={<Faltas />} />
+
+        <Route path="boletos" element={<Boletos />} />
+
+        <Route
+          path="requerimentos"
+          element={<Requerimentos />}
+        />
+      </Route>
     </Routes>
   );
 }
+
+export default App;
