@@ -1,4 +1,7 @@
-import user from '../assets/avatar.svg';
+import { useAuth } from "../contexts/AuthContext";
+
+export default function Topbar() {
+  const { usuario } = useAuth();
 
 function Topbar(props) {
     return (
@@ -8,5 +11,3 @@ function Topbar(props) {
       </header>
     );
 }
-
-export default Topbar;
