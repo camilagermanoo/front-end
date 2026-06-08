@@ -10,6 +10,8 @@ import Faltas from "./pages/Faltas";
 import Notas from "./pages/Notas";
 import Requerimentos from "./pages/Requerimentos";
 
+import RequerimentoForm from "./forms/RequerimentoForm";
+
 function App() {
   return (
     <Routes>
@@ -22,10 +24,10 @@ function App() {
 
         <Route path="boletos" element={<Boletos />} />
 
-        <Route
-          path="requerimentos"
-          element={<Requerimentos />}
-        />
+        <Route path="requerimentos">
+          <Route index element={<Requerimentos />} />
+          <Route path="novo" element={<RequerimentoForm />} />
+        </Route>
       </Route>
     </Routes>
   );
