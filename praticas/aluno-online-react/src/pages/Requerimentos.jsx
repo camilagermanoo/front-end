@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import Main from "../components/Main";
 import Tabela from "../components/Tabela";
 
+export default function Requerimentos() {
 function Requerimentos() {
     const navigate = useNavigate();
 
@@ -29,4 +30,5 @@ function Requerimentos() {
             <Tabela colunas={colunas} dados={dados} />
         </Main>
     );
+}
 }

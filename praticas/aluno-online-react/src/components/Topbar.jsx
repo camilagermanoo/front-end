@@ -1,6 +1,7 @@
 import user from '../assets/avatar.svg';
 import { useAuth } from '../hooks/UseAuth';
 
+export default function Topbar(props) {
 function Topbar(props) {
     const { usuario } = useAuth();
 
@@ -17,4 +18,5 @@ function Topbar(props) {
             </div>
         </header>
     );
+}
 }

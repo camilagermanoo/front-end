@@ -9,6 +9,7 @@ import RequerimentoForm from './forms/RequerimentoForm';
 import Login from './pages/Login';
 import { useAuth } from './hooks/UseAuth';
 
+export default function App() {
 function App() {
   const { autenticado } = useAuth();
 
@@ -34,4 +35,5 @@ function App() {
       )}
     </Routes>
   );
+}
 }
