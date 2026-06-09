@@ -1,6 +1,9 @@
 import user from "../assets/avatar.svg";
+import { useAuth } from "../contexts/AuthContext";
 
 function Topbar({ titulo }) {
+  const { usuario } = useAuth();
+
   return (
     <header className="flex justify-between items-center py-[26px]">
       <h1 className="text-[2rem] font-bold m-4 mb-0">
@@ -9,7 +12,7 @@ function Topbar({ titulo }) {
 
       <img
         className="h-[70px] w-[70px] mr-4"
-        src={user}
+        src={usuario?.foto || user}
         alt="imagem avatar"
       />
     </header>
