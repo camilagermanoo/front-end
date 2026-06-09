@@ -18,5 +18,3 @@ function Topbar({ titulo }) {
     </header>
   );
 }
-
-export default Topbar;
