@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import Main from "../components/Main";
+import { cadastrarRequerimento } from "../services/requerimentoService";
 
 function RequerimentoForm() {
   const navigate = useNavigate();
@@ -13,11 +14,20 @@ function RequerimentoForm() {
     },
   });
 
-  function onSubmit(dados) {
-    console.log("Novo requerimento:", dados);
+  async function onSubmit(dados) {
+  try {
+    await cadastrarRequerimento({
+      ...dados,
+      situacao: "Em análise",
+    });
+
     reset({ data: today });
+
     navigate("/requerimentos");
+  } catch (erro) {
+    console.log(erro);
   }
+}
 
   return (
     <Main titulo="Meus Requerimentos" subtitulo="Novo Requerimento">
