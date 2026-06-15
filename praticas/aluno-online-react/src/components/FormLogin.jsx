@@ -2,8 +2,10 @@ import InputEmail from "./InputEmail";
 import InputSenha from "./InputSenha";
 import InputSubmit from "./InputSubmit";
 import { useState } from "react";
+import { useAuth } from "../contexts/UseAuth";
 
 function FormLogin({ navegaPara }) {
+    const { login } = useAuth();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [emailErro, setEmailErro] = useState('');
@@ -19,14 +21,14 @@ function FormLogin({ navegaPara }) {
         setSenhaErro('');
     };
 
-    const travaSubmit = (e) => {
+    const travaSubmit = async (e) => {
         e.preventDefault();
-        
+
         setEmailErro('');
         setSenhaErro('');
-        
+
         let temErro = false;
-        
+
         if (!email) {
             setEmailErro('Email é obrigatório');
             temErro = true;
@@ -49,7 +51,7 @@ function FormLogin({ navegaPara }) {
                 temErro = true;
             }
         }
-        
+
         if (!senha) {
             setSenhaErro('Senha é obrigatória');
             temErro = true;
@@ -57,9 +59,14 @@ function FormLogin({ navegaPara }) {
             setSenhaErro('Senha deve ter no mínimo 6 caracteres');
             temErro = true;
         }
-        
+
         if (!temErro) {
-            navegaPara(1);
+            try {
+                await login(email, senha);
+                navegaPara(1);
+            } catch (erro) {
+                setSenhaErro(erro.message || "Email ou senha inválidos");
+            }
         }
     }
 
