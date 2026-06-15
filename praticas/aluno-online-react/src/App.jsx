@@ -7,15 +7,18 @@ import Boletos from './pages/Boletos';
 import Requerimentos from './pages/Requerimentos';
 import RequerimentoForm from './forms/RequerimentoForm';
 import Login from './pages/Login';
-import { useAuth } from './hooks/UseAuth';
+import { useAuth } from './contexts/UseAuth';
 
 export default function App() {
-function App() {
-  const { autenticado } = useAuth();
+  const { estaLogado, carregando } = useAuth();
+
+  if (carregando) {
+    return <div>Carregando...</div>;
+  }
 
   return (
     <Routes>
-      {autenticado ? (
+      {estaLogado ? (
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="notas" element={<Notas />} />
@@ -35,5 +38,4 @@ function App() {
       )}
     </Routes>
   );
-}
 }
